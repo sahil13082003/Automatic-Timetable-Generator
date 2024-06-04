@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,7 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
+
 # Automatic-Timetable-Generator
 This project is an Automated Timetable Generator using the MERN stack (MongoDB, Express, React, Node.js). It helps colleges and universities create conflict-free schedules by automatically assigning subjects and teachers to available time slots, ensuring efficient and optimized timetables for all departments.
->>>>>>> b9f6bffecec34612490900048c197ea19e5a2258
+ b9f6bffecec34612490900048c197ea19e5a2258
