@@ -1,0 +1,35 @@
+.table-data {
+    font-size: 1.4rem;
+  }
+
+  .topic{
+    font-size: 1.4rem;
+  }
+
+  /* Center the dialog */
+.confirm-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style for Yes button */
+.confirm-button-yes {
+  background-color: #5c3bcc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Style for No button */
+.confirm-button-no {
+  background-color: #ff5c5c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+  
