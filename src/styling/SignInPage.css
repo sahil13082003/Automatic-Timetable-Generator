@@ -1,0 +1,72 @@
+/* SignInPage.css */
+
+/* Form container */
+.form-container {
+    max-width: 465px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 190px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(114, 96, 152, 0.3);
+    background-color: #f9f9f9;
+  
+}
+
+/* Form title */
+.form-title {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+/* Buttons container */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Button styles */
+.button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 22px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #5c3bcc;
+    color: #fff;
+}
+
+/* Input field styles */
+.input-field {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 17px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Submit button styles */
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background-color: #5c3bcc;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #4b2e9a;
+}
