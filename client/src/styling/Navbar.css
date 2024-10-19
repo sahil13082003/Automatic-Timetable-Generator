@@ -1,0 +1,50 @@
+.btn {
+    box-shadow: 0 5px 19px rgba(180, 174, 194, 0.4);
+    font-family: "Roboto";
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 7px;
+    transition: background-color 0.5s;
+}
+
+.btn-outline-primary {
+    color: #5c3bcc;
+    background-color: #fff;
+    border: 1px solid #5c3bcc;
+}
+
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #5c3bcc;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #5c3bcc;
+    border: 1px solid #5c3bcc;
+}
+
+.btn-primary:hover {
+    color: #5c3bcc;
+    background-color: #fff;
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    /* Increase font size */
+    transition: color 0.3s, background-color 0.3s;
+    /* Smooth transition for color change */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #5c3bcc;
+    /* Change text color on hover */
+    background-color: #fff;
+    /* Change background color on hover */
+}
