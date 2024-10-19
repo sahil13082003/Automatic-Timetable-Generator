@@ -82,10 +82,11 @@ Automatic-Timetable-Generator/  # Project root
     ├── .gitignore               # Files to ignore in version control
     ├── package-lock.json        # npm lock file for dependencies
     └── package.json             # Project metadata and dependencies
-
+```
 # Usage
 
 To run the development servers for both frontend and backend, use the following commands:
+```
 
 1. For the server (backend):
 
@@ -93,9 +94,40 @@ To run the development servers for both frontend and backend, use the following 
 cd server
 npm run start
 ```
-2.For the client (frontend):
+
+2. For the client (frontend):
 
 ```bash
 cd ../client
 npm run start
 ```
+Open http://localhost:3000 to view the frontend in your browser.
+
+## Technologies Used
+
+- MongoDB - NoSQL database for storing timetable data.
+- Express - Web framework for Node.js to build the backend API.
+- React - A JavaScript library for building user interfaces.
+- Node.js - JavaScript runtime for server-side development.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+
+2. Create a new feature branch (**`git checkout -b feature/your-feature`**).
+
+3. Commit your changes (**`git commit -m 'Add new feature'`**).
+
+4. Push to the branch (**`git push origin feature/your-feature`**).
+
+5. Open a pull request.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+# Links
+
+- Live site: [Portfolio on Vercel](https://automatic-timetable-generator.vercel.app/) 
