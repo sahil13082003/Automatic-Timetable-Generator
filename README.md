@@ -130,4 +130,4 @@ Contributions are welcome! Please follow these steps:
 
 # Links
 
-- Live site: [Portfolio on Vercel](https://automatic-timetable-generator.vercel.app/) 
+- Live site: [Scheduler](https://automatic-timetable-generator.vercel.app/) 
