@@ -82,3 +82,20 @@ Automatic-Timetable-Generator/  # Project root
     ├── .gitignore               # Files to ignore in version control
     ├── package-lock.json        # npm lock file for dependencies
     └── package.json             # Project metadata and dependencies
+
+# Usage
+
+To run the development servers for both frontend and backend, use the following commands:
+
+1. For the server (backend):
+
+```bash
+cd server
+npm run start
+```
+2.For the client (frontend):
+
+```bash
+cd ../client
+npm run start
+```
