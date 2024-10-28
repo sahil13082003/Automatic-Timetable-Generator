@@ -15,7 +15,7 @@ timetableRouter.delete('/deletesubject/:id', deleteSubject);
 timetableRouter.post('/teachers', addTeacher);
 timetableRouter.get('/fetchteachers', fetchTeacher);
 timetableRouter.delete('/deleteteacher/:id', deleteTeacher);
-
+ 
 //ClassRooms Routing
 timetableRouter.post('/classrooms', addClassroom);
 timetableRouter.get("/fetchclassroom", fetchClassroom)
