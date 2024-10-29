@@ -5,9 +5,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../styling/SignInPage.css";
 import { useNavigate } from 'react-router-dom';
-import dotenv from 'dotenv';
-
-dotenv.config()
 
 function SignInPage() {
     const [signInType, setSignInType] = useState("admin");
@@ -27,7 +24,7 @@ function SignInPage() {
             formData = { teacherID, signInType: "teacher" };
         }
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/signin`, {
+            const response = await fetch('http://localhost:5000/api/signin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
