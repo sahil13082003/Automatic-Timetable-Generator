@@ -10,6 +10,8 @@ const { generateTimetableForAllSemesters } = require('../controllers/server.js')
 timetableRouter.post('/addsubjects', addSubject);
 timetableRouter.get('/fetchsubjects', fetchSubject);
 timetableRouter.delete('/deletesubject/:id', deleteSubject);
+// timetableRouter.delete('/deletesubject/:id', deleteSubject);
+
 
 // Teachers Routing
 timetableRouter.post('/teachers', addTeacher);
