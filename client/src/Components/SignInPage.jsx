@@ -13,7 +13,7 @@ function SignInPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         let formData = {};
         if (signInType === "admin") {
             const email = e.target.elements.email.value;
@@ -23,50 +23,42 @@ function SignInPage() {
             const teacherID = e.target.elements.teacherID.value;
             formData = { teacherID, signInType: "teacher" };
         }
+    
         try {
             const response = await fetch('https://automatic-timetable-generator.onrender.com/api/signin', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
             });
-
+    
             const data = await response.json();
+            console.log("Form Data:", formData);
 
-            if(signInType === "teacher"){
-                localStorage.setItem('username', data.user.teacherName);
-            }else{
-                localStorage.setItem('username', data.user.username);
-            }
-            
-
+    
             if (response.ok) {
+                if (data.user) {  // Check if data.user exists
+                    if (signInType === "teacher" && data.user.teacherName) {
+                        localStorage.setItem('username', data.user.teacherName);
+                    } else if (data.user.username) {
+                        localStorage.setItem('username', data.user.username);
+                    }
+                }
+    
                 if (signInType === "teacher") {
-                    const teacherResponse = await fetch(`https://automatic-timetable-generator.onrender.com/api/fetchteachers/${formData.teacherID}`);
+                    const teacherResponse = await fetch(`http://localhost:5000/api/fetchteachers/${formData.teacherID}`);
                     const teacherData = await teacherResponse.json();
                     setTeacherName(teacherData.teacherName);
                 }
-
+    
                 toast.success("You have successfully signed in!", {
                     position: "top-right",
                     autoClose: 400,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
                     onClose: () => navigate("/")
                 });
             } else {
-                toast.error(data.message, {
+                toast.error(data.message || "Login failed", {
                     position: "top-right",
                     autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
                 });
             }
         } catch (error) {
@@ -74,14 +66,10 @@ function SignInPage() {
             toast.error("An error occurred. Please try again later.", {
                 position: "top-right",
                 autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
             });
         }
     };
+    
 
     return (
         <div className="form-container">
