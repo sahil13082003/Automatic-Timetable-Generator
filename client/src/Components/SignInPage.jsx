@@ -24,7 +24,7 @@ function SignInPage() {
             formData = { teacherID, signInType: "teacher" };
         }
         try {
-            const response = await fetch('http://localhost:5000/api/signin', {
+            const response = await fetch('https://automatic-timetable-generator.onrender.com/api/signin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ function SignInPage() {
 
             if (response.ok) {
                 if (signInType === "teacher") {
-                    const teacherResponse = await fetch(`http://localhost:5000/api/fetchteachers/${formData.teacherID}`);
+                    const teacherResponse = await fetch(`https://automatic-timetable-generator.onrender.com/api/fetchteachers/${formData.teacherID}`);
                     const teacherData = await teacherResponse.json();
                     setTeacherName(teacherData.teacherName);
                 }

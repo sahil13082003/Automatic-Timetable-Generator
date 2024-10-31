@@ -17,7 +17,7 @@ function AssignLab() {
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/fetchsubjects');
+        const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchsubjects');
         console.log(response.data.data);
         setSubjects(response.data.data);
       } catch (error) {
@@ -27,7 +27,7 @@ function AssignLab() {
 
     const fetchTeachers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/fetchteachers');
+        const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchteachers');
         console.log(response.data.data);
         setTeachers(response.data.data);
       } catch (error) {
@@ -42,7 +42,7 @@ function AssignLab() {
   useEffect(() => {
     const fetchAssignments = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/fetchlabs');
+        const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchlabs');
         console.log(response.data.data, "labs");
         setAssignments(response.data.data);
       } catch (error) {
@@ -55,13 +55,13 @@ function AssignLab() {
 
   const handleAssign = async () => {
     try {
-      await axios.post('http://localhost:5000/api/labassignments', {
+      await axios.post('https://automatic-timetable-generator.onrender.com/api/labassignments', {
         subjectId: selectedSubject,
         teacherId: selectedTeacher,
       });
       console.log('Assignment successful');
       toast.success('Assignment successful');
-      const response = await axios.get('http://localhost:5000/api/fetchlabs');
+      const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchlabs');
       console.log(response.data.data, "labs");
       setAssignments(response.data.data);
     } catch (error) {

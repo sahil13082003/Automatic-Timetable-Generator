@@ -30,7 +30,7 @@ function AddTeachers() {
 
   const fetchTeachers = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/fetchteachers");
+      const response = await axios.get("https://automatic-timetable-generator.onrender.com/api/fetchteachers");
       setTeachers(response?.data.data); 
     } catch (error) {
       toast.error("Error fetching teachers:", error);
@@ -46,7 +46,7 @@ function AddTeachers() {
           label: 'Yes',
           onClick: async () => {
             try {
-              const response = await axios.delete(`http://localhost:5000/api/deleteTeacher/${id}`);
+              const response = await axios.delete(`https://automatic-timetable-generator.onrender.com/api/deleteTeacher/${id}`);
               if (response.status === 200) {
                 toast.success('Teacher deleted successfully');
                 setRefereshToken(response);
@@ -81,7 +81,7 @@ function AddTeachers() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/teachers', formData);
+      const response = await axios.post('https://automatic-timetable-generator.onrender.com/api/teachers', formData);
       if (response.status === 201) {
         toast.success('Teacher added successfully', { autoClose: 5000 });
         setRefereshToken(response)

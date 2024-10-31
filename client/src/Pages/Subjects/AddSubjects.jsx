@@ -70,7 +70,7 @@ function AddSubjects() {
   useEffect(() => {
     const fetchData = async () => {   
       try {
-        const response = await axios.get('http://localhost:5000/api/fetchsubjects');
+        const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchsubjects');
         setSubjectData(response?.data.data)
       } catch (error) {
         console.error('Error:', error);
@@ -84,7 +84,7 @@ function AddSubjects() {
     e.preventDefault();
     try {
       const formData = subjectType === "Theory" ? theoryFormData : (subjectType === "Lab" ? labFormData : electiveFormData);
-      const response = await axios.post('http://localhost:5000/api/addsubjects', formData);
+      const response = await axios.post('https://automatic-timetable-generator.onrender.com/api/addsubjects', formData);
       if (response.status === 201) {
         toast.success('Subject added successfully', { autoClose: 5000 }); 
         setRefereshToken(response)
@@ -106,7 +106,7 @@ function AddSubjects() {
             label: 'Yes',
             onClick: async () => {
               const subjectId = id; 
-              const response = await axios.delete(`http://localhost:5000/api/deletesubject/${subjectId}`);
+              const response = await axios.delete(`https://automatic-timetable-generator.onrender.com/api/deletesubject/${subjectId}`);
               if (response.status === 200) {
                 toast.success('Subject deleted successfully');
                 setRefereshToken(response);

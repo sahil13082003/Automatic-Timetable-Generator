@@ -17,7 +17,7 @@ function AssignTheory() {
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/fetchsubjects');
+        const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchsubjects');
         setSubjects(response.data.data);
       } catch (error) {
         console.error('Error fetching subjects:', error);
@@ -26,7 +26,7 @@ function AssignTheory() {
 
     const fetchTeachers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/fetchteachers');
+        const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchteachers');
         setTeachers(response.data.data);
       } catch (error) {
         console.error('Error fetching teachers:', error);
@@ -40,7 +40,7 @@ function AssignTheory() {
   useEffect(() => {
     const fetchAssignments = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/fetchassignments');
+        const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchassignments');
         setAssignments(response.data.data);
       } catch (error) {
         console.error('Error fetching assignments:', error);
@@ -52,12 +52,12 @@ function AssignTheory() {
 
   const handleAssign = async () => {
     try {
-      await axios.post('http://localhost:5000/api/theoryassignments', {
+      await axios.post('https://automatic-timetable-generator.onrender.com/api/theoryassignments', {
         subjectId: selectedSubject,
         teacherId: selectedTeacher,
       });
       toast.success('Assignment successful');
-      const response = await axios.get('http://localhost:5000/api/fetchassignments');
+      const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchassignments');
       setAssignments(response.data.data);
     } catch (error) {
       console.error('Error assigning:', error);
@@ -74,7 +74,7 @@ function AssignTheory() {
           label: 'Yes',
           onClick: async () => {
             try {
-              await axios.delete(`http://localhost:5000/api/deleteAssignments/${AssignmentId}`);
+              await axios.delete(`https://automatic-timetable-generator.onrender.com/api/deleteAssignments/${AssignmentId}`);
               toast.success('Assignment deleted successfully');
               const updatedAssignments = assignments.filter(assignment => assignment._id !== AssignmentId);
               setAssignments(updatedAssignments);

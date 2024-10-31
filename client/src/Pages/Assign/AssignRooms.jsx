@@ -16,7 +16,7 @@ function AssignClassrooms() {
     useEffect(() => {
         const fetchClassrooms = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/fetchclassroom');
+                const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchclassroom');
                 setClassrooms(response.data.data);
             } catch (error) {
                 console.error('Error fetching classrooms:', error);
@@ -37,7 +37,7 @@ function AssignClassrooms() {
     useEffect(() => {
         const fetchAssignments = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/fetchclassrooms');
+                const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchclassrooms');
                 setAssignments(response.data.data);
             } catch (error) {
                 console.error('Error fetching classroom assignments:', error);
@@ -50,14 +50,14 @@ function AssignClassrooms() {
     const handleAssign = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/assignclassrooms', {
+            await axios.post('https://automatic-timetable-generator.onrender.com/api/assignclassrooms', {
                 course: selectedCourse,
                 year: selectedYear,
                 section: selectedSection,
                 classroom: selectedClassroom.classroomName
             });
             toast.success('Classroom assigned successfully');
-            const response = await axios.get('http://localhost:5000/api/fetchclassrooms');
+            const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchclassrooms');
             setAssignments(response.data.data);
         } catch (error) {
             console.error('Error assigning classroom:', error);
@@ -66,9 +66,9 @@ function AssignClassrooms() {
 
     const handleDelete = async (assignmentId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/removeclassroom/${assignmentId}`);
+            await axios.delete(`https://automatic-timetable-generator.onrender.com/api/removeclassroom/${assignmentId}`);
             toast.success('Assignment deleted successfully');
-            const response = await axios.get('http://localhost:5000/api/fetchclassrooms');
+            const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchclassrooms');
             setAssignments(response.data.data);
         } catch (error) {
             console.error('Error deleting assignment:', error);

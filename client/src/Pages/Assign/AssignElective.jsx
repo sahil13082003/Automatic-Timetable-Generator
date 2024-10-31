@@ -17,7 +17,7 @@ function AssignElectives() {
     useEffect(() => {
         const fetchSubjects = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/fetchsubjects');
+                const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchsubjects');
                 console.log(response.data.data);
                 setSubjects(response.data.data);
             } catch (error) {
@@ -27,7 +27,7 @@ function AssignElectives() {
 
         const fetchTeachers = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/fetchteachers');
+                const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchteachers');
                 console.log(response.data.data);
                 setTeachers(response.data.data);
             } catch (error) {
@@ -42,7 +42,7 @@ function AssignElectives() {
     useEffect(() => {
         const fetchAssignments = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/fetchelective');
+                const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchelective');
                 console.log(response.data.data);
                 setAssignments(response.data.data);
             } catch (error) {
@@ -55,13 +55,13 @@ function AssignElectives() {
 
     const handleAssign = async () => {
         try {
-            await axios.post('http://localhost:5000/api/electiveassignments', {
+            await axios.post('https://automatic-timetable-generator.onrender.com/api/electiveassignments', {
                 subjectId: selectedSubject,
                 teacherId: selectedTeachers,
             });
             console.log('Assignment successful');
             toast.success('Assignment successful');
-            const response = await axios.get('http://localhost:5000/api/fetchelective');
+            const response = await axios.get('https://automatic-timetable-generator.onrender.com/api/fetchelective');
             console.log(response.data.data);
             setAssignments(response.data.data);
         } catch (error) {
@@ -79,7 +79,7 @@ function AssignElectives() {
                     label: 'Yes',
                     onClick: async () => {
                         try {
-                            await axios.delete(`http://localhost:5000/api/deleteAssignments/${AssignmentId}`);
+                            await axios.delete(`https://automatic-timetable-generator.onrender.com/api/deleteAssignments/${AssignmentId}`);
                             toast.success('Assignment deleted successfully');
                             const updatedAssignments = assignments.filter(assignment => assignment._id !== AssignmentId);
                             setAssignments(updatedAssignments);
