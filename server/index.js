@@ -8,7 +8,11 @@ app.use(express.json());
 const mongoose = require('mongoose');
 // const mongoURI = 'mongodb://localhost:27017/Automatic_TimeTable_Generator';
   const mongoURI = process.env.MONGO_URL
-app.use(cors());
+
+
+
+app.use(cors({ origin: 'http://localhost:3000' }));
+
 mongoose.connect(mongoURI)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Error connecting to MongoDB:', err));
