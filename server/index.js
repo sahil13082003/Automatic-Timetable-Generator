@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 
 
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'https://automatic-timetable-generator.vercel.app' }));
 
 mongoose.connect(mongoURI)
   .then(() => console.log('Connected to MongoDB'))
